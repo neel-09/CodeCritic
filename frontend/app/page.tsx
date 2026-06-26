@@ -6,9 +6,9 @@ import SupportedComponentsPanel from "@/components/SupportedComponentsPanel";
 import { SUPPORTED_COMPONENTS } from '@/lib/supportedComponents'
 
 const BOARD_COLORS: Record<string, string> = {
-  'Arduino Uno':     '#0d3a6e',
-  'Arduino Nano':    '#0d3a6e',
-  'Arduino Mega':    '#0d3a6e',
+  'Arduino Uno':  '#0d3a6e',
+  'Arduino Nano': '#0d3a6e',
+  'Arduino Mega': '#0d3a6e',
 }
 
 const EXAMPLES = [
@@ -68,7 +68,7 @@ export default function HomePage() {
 
   return (
     <div
-      className="h-screen bg-[#040d08] text-white flex flex-col overflow-hidden"
+      className="h-screen bg-[#040d08] text-white flex flex-col overflow-hidden relative"
       style={{ transition: 'opacity 0.38s ease, transform 0.38s ease',
                opacity: leaving ? 0 : 1,
                transform: leaving ? 'scale(0.98)' : 'scale(1)' }}
