@@ -1,0 +1,11 @@
+[project]
+name = "codecritic"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "mcp==1.9.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["backend*"]

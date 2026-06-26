@@ -1,0 +1,11 @@
+langgraph
+langchain-google-genai
+langchain-groq
+mcp[cli]
+python-dotenv
+supabase
+langsmith
+langchain
+ipython
+langchain-tavily
+fastapi 
