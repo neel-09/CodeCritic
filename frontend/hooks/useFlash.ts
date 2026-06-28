@@ -13,13 +13,17 @@ export function useFlash(sessionId: string, board: string) {
     try {
       // Fetch hex from backend
       const res = await fetch(`/api/hex/${sessionId}`)
-      if (!res.ok) throw new Error('Failed to fetch firmware')
+      if (!res.ok) throw new Error('Could not load firmware — try regenerating the project')
       const hexText = await res.text()
 
       await flashHex(hexText, board, setStatus, setProgress)
     } catch (err) {
       setStatus('error')
-      setError(err instanceof Error ? err.message : 'Flash failed')
+      if (err instanceof DOMException && err.name === 'NotFoundError') {
+        setError('No port selected — connect your board via USB and try again')
+      } else {
+        setError(err instanceof Error ? err.message : 'Flash failed')
+      }
     }
   }, [sessionId, board])
 
